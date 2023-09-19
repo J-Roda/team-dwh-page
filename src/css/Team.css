@@ -1,0 +1,86 @@
+.media-scroller {
+    --_spacer: 0.5rem !important;
+    display: grid !important;
+    gap: var(--_spacer) !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: 25vw !important;
+    padding: 0 var(--_spacer) var(--_spacer) !important;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.media-scroller::-webkit-scrollbar {
+    width: 1.5rem;
+}
+
+.media-scroller::-webkit-scrollbar-track {
+    background: #f2f1f9;
+    border-radius: 10px;
+}
+
+.media-scroller::-webkit-scrollbar-thumb {
+    background: #625b95;
+    border-radius: 10px;
+}
+
+.media-element > img {
+    inline-size: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    object-fit: cover !important;
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+
+.dropdown-menu {
+    inset: 0 auto auto -14vw !important;
+}
+
+
+@media (max-width: 900px) {
+    .media-scroller {
+        grid-auto-columns: auto;
+        padding: 0;
+        overflow-x: scroll;
+        overscroll-behavior-inline: auto;
+        grid-auto-columns: 60vw !important;
+    }
+
+    .snaps-inline {
+        scroll-padding-inline: 0;
+    }
+}   
+@media (max-width: 768px) {
+    .media-scroller {
+        grid-auto-columns: auto;
+        padding: 0;
+        overflow-x: scroll;
+        overscroll-behavior-inline: auto;
+        grid-auto-columns: 50vw !important;
+    }
+
+    .snaps-inline {
+        scroll-padding-inline: 0;
+    }
+}   
+
+@media (max-width: 600px) {
+    .media-scroller {
+        grid-auto-columns: auto;
+        padding: 0;
+        overflow-x: scroll;
+        overscroll-behavior-inline: auto;
+        grid-auto-columns: 80vw !important;
+    }
+
+    .snaps-inline {
+        scroll-padding-inline: 0;
+    }
+}
